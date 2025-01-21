@@ -2,3 +2,8 @@ btor2mlir_portable/bin_bundle/
 btor2mlir_portable/lib_bundle/
 btor2mlir_portable/
 btor2mlir_portable/run_with_libs.sh
+bin_bundle/
+lib_bundle/
+run_with_libs.sh
+*.ll
+*.mlir
