@@ -60,3 +60,8 @@ cd btor2mlir_portable
 ```bash
 ./run_with_libs.sh bin_bundle/btor2mlir-translate --mlir-to-llvmir ./TestCases/test1_optimized.mlir -o ./TestCases/test1_final.ll
 ```
+
+4. Optimize by seahorn
+```bash
+./run_with_libs.sh seahorn/bin/sea bnd-smt -O3 --inline --enable-loop-idiom --enable-indvar --no-lower-gv-init-struct --externalize-addr-taken-functions --no-kill-vaarg --with-arith-overflow=true --horn-unify-assumes=true --horn-gsa --no-fat-fns=bcmp,memcpy,assert_bytes_match,ensure_linked_list_is_allocated,sea_aws_linked_list_is_valid --dsa=sea-cs-t --devirt-functions=types --bmc=opsem --horn-vcgen-use-ite --horn-vcgen-only-dataflow=true --horn-bmc-coi=true --sea-opsem-allocator=static --horn-explicit-sp0=false --horn-bv2-lambdas --horn-bv2-simplify=false --horn-bv2-extra-widemem -S --keep-temps --temp-dir=/tmp/btor2mlir --horn-stats=true -o TestCases/test1.smt2 TestCases/test1_final.ll 
+```
