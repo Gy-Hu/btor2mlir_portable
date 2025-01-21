@@ -2,6 +2,8 @@
 
 Adapt from `https://github.com/jetafese/hwmcc20-mlir`
 
+Personal used only, recommend to use docker of `btor2mlir` instead of using this repo
+
 ## Usage Guide
 
 ### Deployment on New Machine:
