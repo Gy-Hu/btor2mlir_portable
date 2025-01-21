@@ -1,10 +1,14 @@
 # btor2mlir_portable
 
+Adapt from `https://github.com/jetafese/hwmcc20-mlir`
+
 ## Usage Guide
 
 ### Deployment on New Machine:
 ```bash
 # Extract files
+cat sea_part_* > sea.tar.gz
+cat btor2mlir_part_* > btor2mlir.tar.gz
 tar -xzf btor2mlir_portable.tar.gz
 
 # Enter directory
