@@ -7,3 +7,5 @@ lib_bundle/
 run_with_libs.sh
 *.ll
 *.mlir
+._.DS_Store
+.DS_Store

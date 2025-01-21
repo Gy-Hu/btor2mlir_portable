@@ -41,35 +41,22 @@ cd btor2mlir_portable
 
 1. Convert Btor2 to MLIR:
 ```bash
-./run_with_libs.sh bin_bundle/btor2mlir-translate --import-btor test.btor2 -o test.mlir
+./run_with_libs.sh bin_bundle/btor2mlir-translate --import-btor ./TestCases/test1.btor2 -o ./TestCases/test1.mlir
 ```
 
 2. Optimize MLIR:
 ```bash
-./run_with_libs.sh bin_bundle/btor2mlir-opt test.mlir \
+./run_with_libs.sh bin_bundle/btor2mlir-opt ./TestCases/test1.mlir \
   --convert-btornd-to-llvm \
   --convert-btor-to-vector \
   --convert-arith-to-llvm \
   --convert-std-to-llvm \
   --convert-btor-to-llvm \
   --convert-vector-to-llvm \
-  -o test_optimized.mlir
+  -o ./TestCases/test1_optimized.mlir
 ```
 
 3. Generate LLVM IR:
 ```bash
-./run_with_libs.sh bin_bundle/btor2mlir-translate --mlir-to-llvmir test_optimized.mlir -o test_final.ll
+./run_with_libs.sh bin_bundle/btor2mlir-translate --mlir-to-llvmir ./TestCases/test1_optimized.mlir -o ./TestCases/test1_final.ll
 ```
-
-### Verification Steps:
-```bash
-# Validate MLIR syntax
-./run_with_libs.sh bin_bundle/btor2mlir-opt test.mlir -verify
-
-# Preview LLVM output
-head -n 20 test_final.ll
-
-# Verify exit code
-echo $?
-```
-
