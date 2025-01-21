@@ -9,3 +9,7 @@ run_with_libs.sh
 *.mlir
 ._.DS_Store
 .DS_Store
+seahorn/
+sea.tar.gz
+seahorn.tar.zsd
+.vscode/setting.json
